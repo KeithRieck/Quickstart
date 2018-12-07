@@ -3,11 +3,7 @@ plugins {
     id "edu.wpi.first.GradleRIO" version "2019.0.0-alpha-3"
 }
 
-def ROBOT_CLASS = "org.firebears.betaTestRobot2.Robot"
-
-repositories {
-    mavenCentral()
-}
+def ROBOT_CLASS = "frc.robot.Robot"
 
 // Define my targets (RoboRIO) and artifacts (deployable files)
 // This is added by GradleRIO's backing project EmbeddedTools.
@@ -18,7 +14,7 @@ deploy {
             // or from command line. If not found an exception will be thrown.
             // You can use getTeamOrDefault(team) instead of getTeamNumber if you
             // want to store a team number in this file.
-            team = getTeamOrDefault()
+            team = getTeamNumber()
         }
     }
     artifacts {
@@ -36,12 +32,6 @@ dependencies {
     compile wpilib()
     compile ctre()
     compile navx()
-    testCompile 'org.junit.jupiter:junit-jupiter-api:5.2.0'
-    testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.2.0'
-}
-
-test {
-     useJUnitPlatform()
 }
 
 // Setting up my Jar File. In this case, adding all libraries into the main jar ('fat jar')
