@@ -10,11 +10,8 @@ def ROBOT_CLASS = "frc.robot.Robot"
 deploy {
     targets {
         target("roborio", edu.wpi.first.gradlerio.frc.RoboRIO) {
-            // Team number is loaded either from the .wpilib/wpilib_preferences.json
-            // or from command line. If not found an exception will be thrown.
-            // You can use getTeamOrDefault(team) instead of getTeamNumber if you
-            // want to store a team number in this file.
-            team = getTeamNumber()
+            // Change your team number below
+            team = getTeamOrDefault(1234)
         }
     }
     artifacts {
